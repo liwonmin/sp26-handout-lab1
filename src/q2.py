@@ -14,5 +14,15 @@ def set_password() -> None:
        requirements which are not met and go back to step 1.
        (Keep repeating until password is valid)
     """
-    # This function will require calling validate_password from q1
-    pass
+    print("Please create a strong password.")
+    print("Requirements: at least 8 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character (!@#$%^&*)\n")
+    
+    while True:
+        password = input("Enter your password: ")
+        
+        if validate_password(password):
+            print("\nPassword set successfully!")
+            break
+        else:
+            # validate_password() already printed what went wrong
+            print("\nPlease try again with a stronger password.\n")
